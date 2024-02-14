@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-6 fondo">
+ <div class="container my-5">
+   <div class="row my-5">
+     <div class="col-md-12 dimension">
+       <p class="font-title text-center">
+         <img src="assets/imgs/boutique.png" class="img-fluid" alt="">
+       </p>
+     </div>
+     <div class="col-md-12 header-text">
+       <p class="font-subtitle">Dentro de la plataforma podrás realizar las siguientes actividades</p>
+       <div class="font">
+         <ul class="list-unstyled">
+           <li>•Captura de datos de cliente</li>
+           <li>•Captura de datos de pago</li>
+           <li>•Captura de datos de financiamiento</li>
+         </ul>
+       </div>
+     </div>
+     <div class="col-md-12 text-center">
+       <video src="assets/media/boutique.mp4" [muted]="true" loop autoplay class="img-fluid frame"></video>
+     </div>
+   </div>
+ </div>
+  </div>
+  <div class="col-md-6 mt-5">
+    <div class="container">
+      <div class="text-center"><img src="assets/imgs/boutique-obscuro.png" alt="" class="img-fluid w-25 text-center">
+      </div>
+      <div class="row">
+        <div class="col-md-12 contenedor">
+          <form #loginForm="ngForm" (ngSubmit)="login()">
+            <div class="text-center">
+              <h3 class="font-subtitle mb-3" style="color: #176F44 !important; font-weight: bold !important;">Ingreso a plataforma</h3>
+              <h6 class="font-descripcion mx-3">Coloque sus datos de acceso para ingresar.</h6>
+            </div>
+            <div class="form-group" [ngClass]="{error: username.invalid && (username.dirty || username.touched)}">
+              <div class="input-group mb-2 mt-3 col-md-12">
+                <i class="fas fa-user text-black mt-2"></i>
+                <input type="text" id="username" class="form-control" placeholder="Correo electrónico" name="username" required email [(ngModel)]="usuario.correo" #username="ngModel">
+              </div>
+              <small class="form-error" *ngIf="username.invalid && (username.dirty || username.touched)">
+                  <span class="color" *ngIf="username.errors!= null && username.errors['email']">
+                    Ingrese el formato correcto
+                  </span>
+                <span class="color" *ngIf="username.errors!= null && username.errors['required']">
+                    Este valor es obligatorio
+                  </span>
+              </small></div>
+            <div class="form-group" [ngClass]="{error: password.invalid && (password.dirty || password.touched)}">
+              <div class="input-group mb-2 col-md-12">
+                <i class="fas fa-lock text-black mt-2"></i>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required [(ngModel)]="usuario.contrasena" #password="ngModel">
+              </div>
+              <small class="form-error" *ngIf="password.invalid && (password.dirty || password.touched)">
+                  <span class="color" *ngIf="password.errors != null && password.errors['required']">
+                    Por favor ingrese su contraseña.
+                  </span>
+              </small>
+            </div>
+            <div class="mb-2 text-center">
+              <button type="submit" [disabled]="!loginForm.form.valid" class="btn login-btn">
+                Acceder
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

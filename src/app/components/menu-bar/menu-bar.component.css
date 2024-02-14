@@ -1,0 +1,11 @@
+.bg-menu-bar{
+  background: black;
+}
+.nav-link{
+  color: white !important;
+}
+.active{
+ font-size: 26px !important;
+  font-weight: 600 !important;
+  color: #176F44 !important;
+}

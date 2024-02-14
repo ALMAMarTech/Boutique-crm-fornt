@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-menu-bar">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarBoutiqueContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li><a class="nav-link" [routerLink]="['/plan/new']" routerLinkActive="active" href="">Alta plan</a></li>
+        <li><a class="nav-link" [routerLink]="['/cobranza']" routerLinkActive="active" href="">Cobranza general</a></li>
+      </ul>
+      <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+        <li><a class="nav-link" (click)="authService.logout()" href="">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

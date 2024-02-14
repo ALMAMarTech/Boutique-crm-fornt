@@ -1,0 +1,167 @@
+<div class="container mb-5 contenedor">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="assets/imgs/boutique-obscuro.png" alt="" class="img-fluid w-25 text-start">
+      <h1 class="font-section obscuro text-center">Generación de plan de financiamiento</h1>
+      <h6 class="font-descripcion text-center">Completa la siguiente información para crear el formato de financiamiento.</h6>
+      <hr class="obscuro">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mb-4">
+      <h4 class="font-obscuro"><i class="fas fa-user obscuro"></i> Datos de cliente</h4>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-label obscuro">Nombre de cliente</label>
+          <input type="text" class="form-control" placeholder="" required="required" name="nombre_cliente" id="nombre_cliente" [(ngModel)]="plan.persona.nombre">
+        </div>
+        <div class="col-md-6">
+          <label  class="form-label obscuro">Correo electrónico de cliente</label>
+          <input type="email" class="form-control" placeholder=""  required="required" name="nombre_cliente" id="correo_cliente" [(ngModel)]="plan.persona.correo">
+        </div>
+      </div>
+    </div>
+    <hr class="obscuro">
+    <div class="col-md-12">
+      <h4 class="font-obscuro"><i class="fas fa-user obscuro"></i> Datos de Gerente</h4>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-label obscuro">Nombre de gerente</label>
+          <select class="form-control" required="required"  name="gerente" id="gerente" [(ngModel)]="plan.gerente.id">
+            <option value="0" class="obscuro">Seleccione un gerente</option>
+            <option class="obscuro" *ngFor="let gerente of gerentes" [value]="gerente.id">{{gerente.nombre}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="obscuro">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="font-obscuro"><i class="fas fa-money-bill obscuro"></i> Detalles del plan</h4>
+      <h6 class="font-descripcion">Complete la siguiente información referente al plan de financiamiento a capturar:</h6>
+      <hr class="obscuro">
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="desarrollo" class="form-label obscuro">Tipo de desarrollo</label>
+          <select class="form-control" name="desarrollo" id="desarrollo" [(ngModel)]="plan.desarrollo.id" (change)="calculateCodigo()">
+            <option value="0">Seleccione un desarrollo</option>
+            <option class="obscuro" *ngFor="let desarrollo of desarrollos" [value]="desarrollo.id">{{desarrollo.nombre}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="tipo_plan" class="form-label obscuro">Tipo de plan</label>
+          <select class="form-control" name="tipo_plan" id="tipo_plan" [(ngModel)]="plan.tipoPlan.id">
+            <option value="0">Seleccione un plan</option>
+            <option class="obscuro" *ngFor="let plan of planes" [value]="plan.id">{{plan.nombre}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="unidad" class="form-label obscuro">Unidad</label>
+          <input type="number" class="form-control" name="unidad" id="unidad" [(ngModel)]="plan.unidad">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="metros" class="form-label obscuro">Metros cuadrados <sup class="obscuro">2</sup></label>
+          <input type="number" class="form-control" name="metros" id="metros" [(ngModel)]="plan.metro" (change)="calculateCostoTierra(); calculateTotalCoinversion();">
+        </div>
+        <div class="col-md-4">
+          <label for="porcentaje_enganche" class="form-label obscuro">Enganche (%)</label>
+          <input type="number" class="form-control" name="porcentaje_enganche" id="porcentaje_enganche" [(ngModel)]="plan.enganche" (change)="calculateTotalCoinversion();">
+        </div>
+        <div class="col-md-4">
+          <label for="costo_tierra" class="form-label obscuro">Costo de la tierra</label>
+          <input type="number" class="form-control" name="costo_tierra" id="costo_tierra" [(ngModel)]="plan.costoTierra" disabled>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="utilidad" class="form-label obscuro">Utilidad (%)</label>
+          <input type="number" class="form-control" name="utilidad" id="utilidad" [(ngModel)]="plan.utilidad" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="obscuro">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="font-obscuro"><i class="fas fa-money-bill obscuro"></i> Detalles de financiamiento</h4>
+      <h6 class="font-descripcion">Complete la siguiente información referente al financiamiento:</h6>
+      <hr class="obscuro">
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="plazo_enganche" class="form-label obscuro">Plazo enganche</label>
+          <input type="number" class="form-control" name="plazo_enganche" id="plazo_enganche" [(ngModel)]="plan.financiamiento.plazoEnganche">
+        </div>
+        <div class="col-md-4">
+          <label for="tipo_inversion" class="form-label obscuro">Tipo inversión</label>
+          <input type="text" class="form-control" name="tipo_inversion" id="tipo_inversion" [(ngModel)]="plan.financiamiento.tipoInversion" (change)="calculateCodigo()">
+        </div>
+        <div class="col-md-4">
+          <label for="codigo" class="form-label obscuro">Código</label>
+          <input type="text" class="form-control" name="codigo" id="codigo" [(ngModel)]="plan.financiamiento.codigo" disabled>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="etapa" class="form-label obscuro">Etapa</label>
+          <input type="number" class="form-control" name="etapa" id="etapa" [(ngModel)]="plan.financiamiento.etapa">
+        </div>
+        <div class="col-md-4">
+          <label for="coinversion" class="form-label obscuro">Coinversión</label>
+          <input type="number" class="form-control" name="coinversion" id="coinversion" [(ngModel)]="plan.financiamiento.coinversion">
+        </div>
+        <div class="col-md-4">
+          <label for="inversion_metro" class="form-label obscuro">Inversión al M <sup class="obscuro">2</sup></label>
+          <input type="number" class="form-control" name="inversion_metro" id="inversion_metro" [(ngModel)]="plan.financiamiento.inversionMetro" (change)="calculateTotalCoinversion()">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="total_enganche" class="form-label obscuro">Total de enganche</label>
+          <input type="number" class="form-control" name="total_enganche" id="total_enganche" [(ngModel)]="plan.financiamiento.totalEnganche" disabled>
+        </div>
+        <div class="col-md-4">
+          <label for="total_coinversion" class="form-label obscuro">Total de Coinversión</label>
+          <input type="number" class="form-control" name="total_coinversion" id="total_coinversion" [(ngModel)]="plan.financiamiento.totalCoinversion" disabled>
+        </div>
+        <div class="col-md-4">
+          <label for="saldo_final" class="form-label obscuro">Saldo final</label>
+          <input type="number" class="form-control" name="saldo_final" id="saldo_final" [(ngModel)]="plan.financiamiento.saldoFinal" disabled>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="premio" class="form-label obscuro">Premio (%) (Descuento si aplica)</label>
+          <input type="number" class="form-control" name="premio" id="premio" [(ngModel)]="plan.financiamiento.porcentajePremio" (change)="calculateTotalCoinversion()">
+        </div>
+        <div class="col-md-4">
+          <label for="mensualidad" class="form-label obscuro">Mensualidad enganche</label>
+          <input type="number" class="form-control" name="mensualidad" id="mensualidad" [(ngModel)]="plan.financiamiento.mensualidadEnganche" disabled>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="plazo_general" class="form-label obscuro">Plazo general</label>
+          <input type="number" class="form-control" name="plazo_general" id="plazo_general" [(ngModel)]="plan.financiamiento.plazo" (change)="calculateTotalCoinversion()">
+        </div>
+        <div class="col-md-4">
+          <label for="mensualidad_general" class="form-label obscuro">Mensualidad general</label>
+          <input type="number" class="form-control" name="mensualidad_general" id="mensualidad_general" [(ngModel)]="plan.financiamiento.mensualidad" disabled>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 d-flex flex-row justify-content-end">
+          <button class="btn login-btn" (click)="guardar()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

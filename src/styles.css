@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'NeutralFace';
+  src: url("assets/fonts/NeutralFace.otf");
+}
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url("assets/fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url("assets/fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: 'Open Sans Medium';
+  src: url("assets/fonts/OpenSans-Medium.ttf");
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url("assets/fonts/OpenSans-Regular.ttf");
+}
+*{
+  font-family: 'Open Sans Light', serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.obscuro{
+  color: #176F44 !important;
+}
+.font-descripcion{
+  font-size: 14px !important;
+  text-align: start !important;
+  line-height: 20px !important;
+  color: #176F44 !important;
+}
+.lateral{
+  margin-left: 9.5em;
+}
+.table-font{
+  font-size: 20px !important;
+  text-align: center;
+  color: #FFFFFF !important;
+}
+.table-details{
+  font-size: 16px !important;
+  text-align: center;
+  color: #FFFFFF !important;
+}
+.table-td{
+  font-size: 16px !important;
+  text-align: center;
+  color: #176F44;
+}
+.font-section{
+  font-family: 'NeutralFace', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 61px;
+  color: #FFFFFF;
+}
+.font-modal{
+  font-family: 'Open Sans Bold', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 61px;
+  color: #FFFFFF;
+}
+.font-title{
+  font-family: 'Neutral Face', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  color: #FFFFFF;
+}
+.font-obscuro{
+  font-family: 'Neutral Face', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  color: #176F44;
+}
+.font-subtitle{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 40px;
+  color: #FFFFFF;
+}

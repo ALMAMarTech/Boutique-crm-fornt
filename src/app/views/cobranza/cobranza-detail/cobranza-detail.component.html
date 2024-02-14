@@ -1,0 +1,204 @@
+<div class="container mb-5 contenedor mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="assets/imgs/boutique-obscuro.png" alt="" class="img-fluid w-25 text-start">
+      <h4 class="font-obscuro text-center">Detalle de financiamiento</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row tables-detail">
+    <div class="col-md-6">
+      <div class="row mb-3">
+        <div class="col-md-12 text-center">
+          <h6 class="obscuro fw-bold">ENGANCHE PLAN: {{plan.tipoPlan.nombre | uppercase}}</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro"> Socio: </b> {{plan.persona.nombre}}</p>
+        </div>
+        <div class="col-md-6">
+          <p> <b class="fw-bold obscuro">Fecha:</b> {{plan.createDate | date: 'dd/mm/yyyy'}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p> <b class="obscuro fw-bold">Desarrollo:</b> {{plan.desarrollo.nombre}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Plazo:</b> {{plan.financiamiento.plazoEnganche}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Tipo de Inversión:</b> {{plan.financiamiento.tipoInversion}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Código:</b> {{plan.financiamiento.codigo}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p> <b class="obscuro fw-bold">Etapa:</b> {{plan.financiamiento.etapa}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Coinversión:</b> {{plan.financiamiento.coinversion}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Superficie M<sup class="obscuro">2</sup>:</b> {{plan.metro}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">% Enganche:</b> {{plan.enganche}}%</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Inversión al M<sup class="obscuro">2</sup>:</b> {{plan.financiamiento.inversionMetro | currency:'MXN'}}</p>
+        </div>
+        <div class="col-md-6">
+          <p> <b class="fw-bold obscuro">Total de enganche:</b> {{plan.financiamiento.totalEnganche | currency: 'MXN'}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>{{plan.tipoPlan.leyendaWeb}}: {{plan.financiamiento.totalCoinversion | currency: 'MXN'}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Saldo final:</b> {{plan.financiamiento.saldoFinal | currency: 'MXN'}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Premio (descuento si aplica): </b> {{plan.financiamiento.porcentajePremio}}%</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Mensualidad:</b> {{plan.financiamiento.mensualidadEnganche | currency: 'MXN'}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row mb-3">
+        <div class="col-md-12 text-center">
+          <h6 class="obscuro fw-bold">ESQUEMA DE FINANCIAMIENTO: {{plan.tipoPlan.nombre | uppercase}}</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p> <b class="fw-bold obscuro">Socio:</b> {{plan.persona.nombre}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Fecha:</b> {{plan.createDate | date: 'dd/mm/yyyy'}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Desarrollo:</b> {{plan.desarrollo.nombre}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Plazo:</b> {{plan.financiamiento.plazo}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Tipo de Inversión:</b> {{plan.financiamiento.tipoInversion}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Código:</b> {{plan.financiamiento.codigo}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Etapa:</b> {{plan.financiamiento.etapa}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Coinversión:</b> {{plan.financiamiento.coinversion}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Superficie M<sup class="obscuro">2</sup>:</b> {{plan.metro}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">% Enganche:</b> {{plan.enganche}}%</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Inversión al M<sup class="obscuro">2</sup>:</b> {{plan.financiamiento.inversionMetro | currency:'MXN'}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Total de enganche:</b> {{plan.financiamiento.totalEnganche | currency: 'MXN'}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>{{plan.tipoPlan.leyendaWeb}}: {{plan.financiamiento.totalCoinversion | currency: 'MXN'}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Saldo final:</b> {{plan.financiamiento.saldoFinal | currency: 'MXN'}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><b class="obscuro fw-bold">Premio (descuento si aplica):</b> {{plan.financiamiento.porcentajePremio}}%</p>
+        </div>
+        <div class="col-md-6">
+          <p><b class="fw-bold obscuro">Mensualidad:</b> {{plan.financiamiento.mensualidad | currency: 'MXN'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12 d-flex justify-content-end">
+      <button class="btn btn-primary" type="button" (click)="generatePdf()">Generar Reporte PDF</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <hr class="obscuro">
+      <h4 class="font-subtitle obscuro">Pagos</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="bg-table">
+        <tr>
+          <th class="table-details">Número de pago</th>
+          <th class="table-details">Fecha</th>
+          <th class="table-details">Mensualidad</th>
+          <th class="table-details">Mensualidad Enganche</th>
+          <th class="table-details">Enganche + Mensualidad</th>
+          <th class="table-details">Saldo capital</th>
+          <th class="table-details">Fecha de pago</th>
+          <th class="table-details">Monto Pagado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let pago of pagos; let i = index">
+          <td class="table-t">{{pago.numeroPago}}</td>
+          <td class="table-t">{{pago.fecha | date:'dd/MM/yyyy'}}</td>
+          <td class="table-t">{{pago.mensualidad | currency:'MXN'}}</td>
+          <td class="table-t">{{pago.mensualidadEnganche | currency:'MXN'}}</td>
+          <td class="table-t">{{pago.totalMensualidad | currency:'MXN'}}</td>
+          <td class="table-t">{{pago.saldoCapital | currency:'MXN'}}</td>
+          <td class="table-t"><span class="table-t" *ngIf="pago.id != 0">{{pago.fechaPago | date:'dd/MM/yyyy'}}</span></td>
+          <td class="table-t">
+            <span class="table-t" *ngIf="pago.id != 0">{{pago.montoPagado | currency:'MXN'}}</span>
+            <div *ngIf="pago.id == 0 && (i == 0 || pagos[i-1]?.id != 0) && procesandoPago == false">
+              <button class="btn btn-success btn-sm" type="button" (click)="procesarPago(i, pago)">Procesar pago</button>
+            </div>
+            <div *ngIf="procesarPagoIndex == i && procesandoPago == true">
+              <label for="pago_{{i}}" class="form-label">Confirme el monto pagado</label>
+              <input type="text" class="form-control" name="pago_{{i}}" id="pago_{{i}}" [(ngModel)]="pagoConfirmado">
+              <button class="btn btn- btn-primary btn-sm my-2" (click)="enviarPago(pago)">Enviar</button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<app-menu-bar *ngIf="authService.isAuthenticated()"></app-menu-bar>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+<ngx-spinner bdColor="rgba(98, 163, 232, 1)" color="rgba(14, 64, 116, 1)" type="ball-scale-multiple"></ngx-spinner>

@@ -1,0 +1,82 @@
+.contenedor{
+  position: relative;
+  padding: 70px 50px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+.contenedor .input-box{
+  position: relative;
+  width: 70%;
+  height: 46px;
+  margin-bottom: 35px;
+}
+.cajita{
+  position: relative;
+  width: 90%;
+  height: 46px;
+  margin-bottom: 35px;
+}
+.contenedor .input-box:last-child{
+  margin-bottom: 0;
+}
+.contenedor .input-box input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding:20px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: #292B30;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.contenedor .input-box span{
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  padding: 15px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.contenedor .input-box input:focus ~ span,
+.contenedor .input-box input:valid ~ span{
+  transform: translateX(-15px) translateY(-45px);
+  font-size: 12px;
+}
+.input{
+  font: inherit;
+  color: #292B30;
+  height: 2.2em;
+  margin: 0;
+  display: flex;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.login-btn {
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  background-color:#176F44;
+  color: white;
+  margin-left: 1em;
+}
+.form-control{
+  border-radius: 12px !important;
+}
+.login-btn:hover {
+  color: white;
+  background-color: #176F44;
+  cursor: pointer;
+}

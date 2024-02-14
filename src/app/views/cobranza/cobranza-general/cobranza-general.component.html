@@ -1,0 +1,46 @@
+<div class="container-fluid mb-5 contenedor mt-3">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="assets/imgs/boutique-obscuro.png" alt="" class="img-fluid w-25 text-start">
+      <h1 class="font-obscuro text-center">Concentrado de cobranza general</h1>
+      <h6 class="font-descripcion text-center">Para ver el detalle individual de cobranza selecciona un elemento:</h6>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="bg-table obscuro">
+        <tr>
+          <th class="table-font">CLIENTE</th>
+          <th class="table-font">GERENTE</th>
+          <th class="table-font">PLAN</th>
+          <th class="table-font">UNIDAD/PLAN</th>
+          <th class="table-font">M<sup>2</sup></th>
+          <th class="table-font">ENGANCHE</th>
+          <th class="table-font">COSTO DE LA TIERRA</th>
+          <th class="table-font">UTILIDAD</th>
+          <th class="table-font">INVERSIÓN</th>
+          <th class="table-font">MONTO PAGADO</th>
+          <th class="table-font">MONTO POR PAGAR</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let plan of planes" style="cursor: pointer;" (click)="goToDetail(plan.id)">
+          <td class="table-td">{{plan.persona.nombre}}</td>
+          <td class="table-td">{{plan.gerente.nombre}}</td>
+          <td class="table-td">{{plan.tipoPlan.nombre}}</td>
+          <td class="table-td">{{plan.unidad}}</td>
+          <td class="table-td">{{plan.metro}}</td>
+          <td class="table-td">{{plan.enganche}}%</td>
+          <td class="table-td">{{plan.costoTierra | currency: 'MXN'}}</td>
+          <td class="table-td">{{plan.utilidad}}%</td>
+          <td class="table-td">{{plan.financiamiento.totalCoinversion | currency:'MXN'}}</td>
+          <td class="table-td">{{plan.montoPagado | currency: 'MXN'}}</td>
+          <td class="table-td">{{plan.montoPagar | currency: 'MXN'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

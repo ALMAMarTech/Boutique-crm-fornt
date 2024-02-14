@@ -1,0 +1,79 @@
+.fondo{
+  background: url("src/assets/imgs/amenidad.png") center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.login-form-title {
+  font-weight: 500;
+  font-size: 45px;
+  color: black !important;
+  margin-bottom: 1.5em;
+}
+.contenedor{
+  padding: 70px 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.form-error {
+  color: red !important;
+  margin-top: 0.5em;
+  animation: slide-in-left 0.3s ease;
+}
+.color{
+  color: red !important;
+}
+.dimension{
+  margin: 40px auto 2em;
+}
+.frame{
+  width: 100%;
+  height: 350px;
+  border-radius: 60px;
+}
+.font{
+  line-height: 24px !important;
+  font-size: 22px !important;
+}
+.header-text{
+  margin: auto 2em 4em;
+}
+.form-group.error {
+  animation: shake 0.5s ease-in-out;
+}
+.input-group {
+  display: flex;
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.form-control{
+  border-radius: 10px !important;
+}
+.error .input-group {
+  border: 1px solid red;
+}
+
+.input-group input {
+  flex-grow: 1;
+  width: 70%;
+}
+.login-btn {
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  background-color:#176F44;
+  color: white;
+  margin-left: 1em;
+}
+
+.login-btn:hover {
+  color: white;
+  background-color: #176F44;
+  cursor: pointer;
+}
